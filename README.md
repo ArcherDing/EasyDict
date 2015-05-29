@@ -32,11 +32,16 @@ func NewIconFromResourceId(resId uintptr) (ic *Icon, err error) {
 	return
 }
 ```
+1. 到SQLite3 的下载页面(http://www.sqlite.org/download.html),下载 Windows 下的预编译包 DLL 的压缩包（sqlite-dll-win32-x86-XXX.zip），然后将里面的 DLL 文件拷贝到 system32 目录.
 
-1. 执行`go get github.com/akavel/rsrc`,安装资源打包工具
+2. 安装 TMD 版的 GCC 编译器（http://tdm-gcc.tdragon.net/）
 
-2. 执行`go get github.com/ArcherDing/EasyDict`,下载源码
+3. 执行`go get github.com/mattn/go-sqlite3`安装数据库驱动
 
-3. `cd %GOPATH%/src/github.com/ArcherDing/EasyDict`
+4. 执行`go get github.com/akavel/rsrc`,安装资源打包工具
 
-4. `./make.bat`
+5. 执行`go get github.com/ArcherDing/EasyDict`,下载源码
+
+6. `cd %GOPATH%/src/github.com/ArcherDing/EasyDict`
+
+7. `./make.bat`
