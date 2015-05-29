@@ -10,14 +10,14 @@ import (
 )
 
 func EnToJp(text string) string {
-
-	proxy := func(_ *http.Request) (*url.URL, error) {
-		return url.Parse("http://172.28.25.121:8080")
-	}
-	transport := &http.Transport{Proxy: proxy}
-	client := &http.Client{Transport: transport}
-
-	//client := &http.Client{}
+	/*
+		proxy := func(_ *http.Request) (*url.URL, error) {
+			return url.Parse("http://172.28.25.121:8080")
+		}
+		transport := &http.Transport{Proxy: proxy}
+		client := &http.Client{Transport: transport}
+	*/
+	client := &http.Client{}
 	response, _ := client.PostForm("http://fanyi.baidu.com/multitransapi",
 		url.Values{"from": {"en"}, "to": {"jp"}, "query": {text}, "raw_trans": {""}, "count": {"5"}})
 	defer response.Body.Close()
